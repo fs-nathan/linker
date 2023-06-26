@@ -14,13 +14,12 @@ try:
     urls = file.readlines()
     print(urls)
     for link in urls:
-      print(link)
       try:
         r = requests.get(link.replace("\n", '')).status_code
       except KeyboardInterrupt:
         sys.exit()
       except:
         r = "time out"
-      print(link + " => Ping ==> "+re.search('http:\/\/.*?\/', link).group(0).replace("/", "").replace("http:","") + " status: "+str(r))
+      print(link + " => Ping ==> " + link.replace("\n", '') + " " + str(r))
 except:
   print("\n\n => exit\n")
