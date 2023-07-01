@@ -46,10 +46,11 @@ try:
       start_time = time.time()
       string = link.replace("\n", '')
       array = string.split(' | ')
+      index = array[0]
       url = array[1]
       try:
         selected_proxy = proxies[i % proxies_len]
-        print("-----------------------------------------")
+        print("-----------------------------------------" + index)
         print("Proxy selected: {}".format(selected_proxy))
         print(url)
 
