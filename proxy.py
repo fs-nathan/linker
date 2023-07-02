@@ -27,7 +27,7 @@ for i in range(0, len(proxies)):
         options.add_argument('--proxy-server={}'.format(proxies[i]))
         driver = webdriver.Chrome(options=options)
         driver.get("https://www.whatismyip.com/proxy-check/?iref=home")
-        if "Proxy Type" in WebDriverWait(driver, 5).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "p.card-text"))):
+        if "Proxy Type" in WebDriverWait(driver, 5).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "p.card-text.html"))):
             break
     except Exception:
         driver.quit()
