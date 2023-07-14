@@ -57,7 +57,7 @@ try:
            'http': 'http://' + selected_proxy,
            'https': 'http://' + selected_proxy,
         }
-        r = requests.get(url, proxies=proxy_config).status_code
+        r = requests.get(url).status_code
         print("status: ", str(r))
         elapsed = "%s seconds" % (time.time() - start_time)
         print("Done in " + elapsed)
