@@ -60,9 +60,10 @@ try:
                         'http': 'http://' + selected_proxy,
                         'https': 'http://' + selected_proxy,
                     }
-                    options.add_argument(f'--proxy-server={selected_proxy}')
+                    # options.add_argument(f'--proxy-server={selected_proxy}')
                     driver = webdriver.Chrome(options=options)
                     driver.get(link)
+                    driver.implicitly_wait(10)
                     driver.save_screenshot(str(time.time()) + ".png")
                     driver.quit()
                     elapsed = "%s seconds" % (time.time() - start_time)
